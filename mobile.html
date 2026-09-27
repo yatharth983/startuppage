@@ -5,112 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Home</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      /* Replace 'background.jpg' with your filename or direct web link */
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-                  url('face.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #e4e4e7;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 24px 20px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .greeting {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 32px;
-      text-align: center;
-      color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-    }
-    .shortcuts-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px 12px;
-      max-width: 400px;
-      margin: 0 auto;
+    html, body {
       width: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      background-color: #000;
     }
-    .shortcut {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #f4f4f5;
-      font-size: 0.78rem;
-      font-weight: 500;
-      gap: 8px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
-    }
-    .shortcut-icon {
-      width: 54px;
-      height: 54px;
-      background: rgba(24, 25, 31, 0.65);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-    .shortcut:active .shortcut-icon {
-      transform: scale(0.92);
-      background: rgba(43, 46, 60, 0.85);
+    img {
+      width: 100%;
+      height: 100dvh;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
   </style>
 </head>
 <body>
-
-  <div class="greeting" id="greeting">Welcome</div>
-
-  <div class="shortcuts-grid">
-    <a href="https://www.youtube.com" class="shortcut">
-      <div class="shortcut-icon">▶️</div>
-      <span>YouTube</span>
-    </a>
-    <a href="https://reddit.com" class="shortcut">
-      <div class="shortcut-icon">🤖</div>
-      <span>Reddit</span>
-    </a>
-    <a href="https://github.com" class="shortcut">
-      <div class="shortcut-icon">🐙</div>
-      <span>GitHub</span>
-    </a>
-    <a href="https://mail.google.com" class="shortcut">
-      <div class="shortcut-icon">✉️</div>
-      <span>Gmail</span>
-    </a>
-    <a href="https://chatgpt.com" class="shortcut">
-      <div class="shortcut-icon">💬</div>
-      <span>AI</span>
-    </a>
-    <a href="https://news.ycombinator.com" class="shortcut">
-      <div class="shortcut-icon">📰</div>
-      <span>HackerNews</span>
-    </a>
-    <a href="https://wikipedia.org" class="shortcut">
-      <div class="shortcut-icon">🌐</div>
-      <span>Wiki</span>
-    </a>
-    <a href="https://drive.google.com" class="shortcut">
-      <div class="shortcut-icon">📁</div>
-      <span>Drive</span>
-    </a>
-  </div>
-
-  <script>
-    const hour = new Date().getHours();
-    const g = document.getElementById('greeting');
-    if (hour < 12) g.textContent = "Good Morning";
-    else if (hour < 18) g.textContent = "Good Afternoon";
-    else g.textContent = "Good Evening";
-  </script>
+  <!-- Replace 'background-mobile.jpg' with your exact image file name or link -->
+  <img src="face.png" alt="Wallpaper">
 </body>
 </html>
