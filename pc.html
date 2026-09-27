@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Tab</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 20%, #161821, #0a0a0d);
+      color: #e4e4e7;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .clock-container {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .time {
+      font-size: 3.5rem;
+      font-weight: 300;
+      letter-spacing: -1px;
+    }
+    .date {
+      color: #71717a;
+      font-size: 1rem;
+      margin-top: 4px;
+    }
+    .search-container {
+      width: 100%;
+      max-width: 580px;
+      margin-bottom: 40px;
+    }
+    .search-box {
+      width: 100%;
+      padding: 14px 22px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      font-size: 1.05rem;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .search-box:focus {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 120px);
+      gap: 16px;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      text-decoration: none;
+      color: #d4d4d8;
+      transition: all 0.2s ease;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+    .card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+    .card-icon {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="clock-container">
+    <div class="time" id="clock">00:00</div>
+    <div class="date" id="date">Loading...</div>
+  </div>
+
+  <div class="search-container">
+    <form action="https://www.google.com/search" method="get">
+      <input type="text" name="q" class="search-box" placeholder="Search Google or type a URL..." autofocus autocomplete="off">
+    </form>
+  </div>
+
+  <div class="grid">
+    <a href="https://github.com" class="card">
+      <span class="card-icon">🐙</span>
+      <span>GitHub</span>
+    </a>
+    <a href="https://youtube.com" class="card">
+      <span class="card-icon">▶️</span>
+      <span>YouTube</span>
+    </a>
+    <a href="https://reddit.com" class="card">
+      <span class="card-icon">🤖</span>
+      <span>Reddit</span>
+    </a>
+    <a href="https://mail.google.com" class="card">
+      <span class="card-icon">✉️</span>
+      <span>Gmail</span>
+    </a>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${hours}:${minutes}`;
+      
+      const options = { weekday: 'long', month: 'short', day: 'numeric' };
+      document.getElementById('date').textContent = now.toLocaleDateString(undefined, options);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>

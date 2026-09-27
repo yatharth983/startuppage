@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Home</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0c0d10;
+      color: #e4e4e7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px 20px;
+    }
+    .greeting {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      text-align: center;
+      color: #a1a1aa;
+    }
+    .search-box {
+      margin-bottom: 32px;
+    }
+    .search-box form {
+      display: flex;
+      background: #18191f;
+      border: 1px solid #27272a;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .search-box input {
+      flex: 1;
+      padding: 14px 18px;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .shortcuts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px 12px;
+      max-width: 400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .shortcut {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #d4d4d8;
+      font-size: 0.75rem;
+      gap: 8px;
+    }
+    .shortcut-icon {
+      width: 52px;
+      height: 52px;
+      background: #1e2029;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      border: 1px solid #2e303d;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .shortcut:active .shortcut-icon {
+      transform: scale(0.92);
+      background: #2b2e3c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="greeting" id="greeting">Welcome</div>
+
+  <!-- Search Bar -->
+  <div class="search-box">
+    <form action="https://www.google.com/search" method="get">
+      <input type="search" name="q" placeholder="Search the web..." autofocus autocomplete="off">
+    </form>
+  </div>
+
+  <!-- Mobile Shortcuts (Change URLs & icons as desired) -->
+  <div class="shortcuts-grid">
+    <a href="https://www.youtube.com" class="shortcut">
+      <div class="shortcut-icon">▶️</div>
+      <span>YouTube</span>
+    </a>
+    <a href="https://reddit.com" class="shortcut">
+      <div class="shortcut-icon">🤖</div>
+      <span>Reddit</span>
+    </a>
+    <a href="https://github.com" class="shortcut">
+      <div class="shortcut-icon">🐙</div>
+      <span>GitHub</span>
+    </a>
+    <a href="https://mail.google.com" class="shortcut">
+      <div class="shortcut-icon">✉️</div>
+      <span>Gmail</span>
+    </a>
+    <a href="https://chatgpt.com" class="shortcut">
+      <div class="shortcut-icon">💬</div>
+      <span>AI</span>
+    </a>
+    <a href="https://news.ycombinator.com" class="shortcut">
+      <div class="shortcut-icon">📰</div>
+      <span>HackerNews</span>
+    </a>
+    <a href="https://wikipedia.org" class="shortcut">
+      <div class="shortcut-icon">🌐</div>
+      <span>Wiki</span>
+    </a>
+    <a href="https://drive.google.com" class="shortcut">
+      <div class="shortcut-icon">📁</div>
+      <span>Drive</span>
+    </a>
+  </div>
+
+  <script>
+    const hour = new Date().getHours();
+    const g = document.getElementById('greeting');
+    if (hour < 12) g.textContent = "Good Morning";
+    else if (hour < 18) g.textContent = "Good Afternoon";
+    else g.textContent = "Good Evening";
+  </script>
+</body>
+</html>
