@@ -5,113 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Tab</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
     body {
-      /* Replace 'background.jpg' with your filename or direct web link */
-      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                  url('background.jpg') no-repeat center center fixed;
+      /* Replace 'background.jpg' with your image filename or full image URL */
+      background: url('pcwallpap.png') no-repeat center center fixed;
       background-size: cover;
-      color: #e4e4e7;
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
-    }
-    .clock-container {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .time {
-      font-size: 4.5rem;
-      font-weight: 300;
-      letter-spacing: -1px;
-      color: #ffffff;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    }
-    .date {
-      color: #d4d4d8;
-      font-size: 1.15rem;
-      margin-top: 6px;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 130px);
-      gap: 18px;
-    }
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 22px 14px;
-      background: rgba(20, 20, 25, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      text-decoration: none;
-      color: #f4f4f5;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      gap: 12px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    }
-    .card:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
-      color: #ffffff;
-    }
-    .card-icon {
-      font-size: 1.8rem;
+      background-color: #000;
     }
   </style>
 </head>
 <body>
-
-  <div class="clock-container">
-    <div class="time" id="clock">00:00</div>
-    <div class="date" id="date">Loading...</div>
-  </div>
-
-  <div class="grid">
-    <a href="https://github.com" class="card">
-      <span class="card-icon">🐙</span>
-      <span>GitHub</span>
-    </a>
-    <a href="https://youtube.com" class="card">
-      <span class="card-icon">▶️</span>
-      <span>YouTube</span>
-    </a>
-    <a href="https://reddit.com" class="card">
-      <span class="card-icon">🤖</span>
-      <span>Reddit</span>
-    </a>
-    <a href="https://mail.google.com" class="card">
-      <span class="card-icon">✉️</span>
-      <span>Gmail</span>
-    </a>
-  </div>
-
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      document.getElementById('clock').textContent = `${hours}:${minutes}`;
-      
-      const options = { weekday: 'long', month: 'short', day: 'numeric' };
-      document.getElementById('date').textContent = now.toLocaleDateString(undefined, options);
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-  </script>
 </body>
 </html>
